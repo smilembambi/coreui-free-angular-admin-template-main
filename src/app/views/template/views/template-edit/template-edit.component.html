@@ -1,0 +1,34 @@
+<div class="card">
+  <div class="card-header">
+    <i class="fas fa-user-lock"> {{ getTitle() }}</i>
+    <div style="float: right;">
+      <button (click)="return()" matTooltip="Retour a la liste" type="button" class="btn btn-sm btn-primary">
+        <i class="fa fa-arrow-right"></i> Retour a la liste
+      </button>
+    </div>
+
+    <div class="card-body">
+
+      <form [formGroup]="templateForm" class="example-form" >
+        <div>
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Avance</mat-label>
+            <input formControlName="label" matInput placeholder="Ex. Pizza" value="Sushi">
+          </mat-form-field>
+        </div>
+      </form>
+      <div class="row">
+        <div class="col-md-12" style="margin-top: 10px">
+          <button (click)="save()" [disabled]="loading"  mat-raised-button color="primary">&nbsp;&nbsp;
+            <i *ngIf="!loading" class="fa fa-save"></i>
+            <i *ngIf="loading" class="spinner-grow" style="width: 30px; height: 30px"></i>
+            Valider
+          </button>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
